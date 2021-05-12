@@ -1,0 +1,150 @@
+
+%floating-shadow {
+    box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+        0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+}
+
+.qm-Button {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    cursor: pointer;
+
+    outline: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    border-radius: 4px;
+
+    background: none;
+    height: 36px; /* normal size, 50px large size, 24px small size */
+
+    letter-spacing: 0.0892857143em;
+    line-height: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    color: #6200ee;
+
+    /*padding: 4px;*/
+    padding: 0;
+    margin: 0;
+    min-width: 16px;
+}
+
+.qm-Button::-moz-focus-inner {
+    border: 0;
+}
+
+.qm-Button:not(.qm-Button--icon) {
+    padding: 0 16px;
+}
+
+.qm-Button-text {
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+}
+
+.qm-Button-icon + .qm-Button-text {
+    margin-left: 8px;
+}
+
+.qm-Button-text + .qm-Button-icon {
+    margin-left: 8px;
+}
+
+.qm-Button-icon {
+    pointer-events: none;
+    padding:0;
+    margin:0;
+}
+
+.qm-Button--primary:not(:disabled) {
+    color: #fff;
+    background-color: #6200ee;
+
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: box-shadow;
+}
+
+.qm-Button--primary:hover:not(:disabled),
+.qm-Button--primary:focus:not(:disabled) {
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    background-color: rgba(98, 0, 238, 0.85);
+}
+
+.qm-Button--secondary {
+    border: 1px solid #6200ee;
+}
+
+.qm-Button--flat, .qm-Button--secondary {
+    transition: background-color 0.2s ease-out;
+    will-change: background-color;
+}
+
+.qm-Button--flat:hover:not(:disabled), .qm-Button--flat:focus:not(:disabled),
+.qm-Button--secondary:focus:not(:disabled), .qm-Button--secondary:hover:not(:disabled) {
+    background-color: rgba(98, 0, 238, 0.09);
+}
+
+.qm-Button:disabled {
+    color: #9f9f9f !important;
+}
+
+.qm-Button--secondary:disabled {
+    border-color: #9f9f9f !important;
+}
+
+.qm-Button--primary:disabled {
+    background-color: #dfdfdf !important;
+}
+
+/* round buttons */
+.qm-Button.qm-Button--round,
+.qm-Button.qm-Button--round .qm-Ripple {
+    border-radius: 24px !important;
+}
+.qm-Button.qm-Button--icon.qm-Button--round,
+.qm-Button.qm-Button--icon.qm-Button--round .qm-Ripple {
+    border-radius: 50% !important;
+}
+
+/* floating modifiers - to be used with FABs */
+.qm-Button--floating {
+    @extend %floating-shadow;
+}
+
+/* button sizes */
+.qm-Button.qm-Button--icon {
+    width: 36px;
+    height: 36px;
+}
+.qm-Button.qm-Button--icon.qm-Button--small {
+    width: 24px;
+    height: 24px;
+}
+.qm-Button.qm-Button--icon.qm-Button--large {
+    width: 48px;
+    height: 48px;
+}
+
+.qm-Button.qm-Button--large {
+    font-size: 1rem;
+    height: 50px;
+}
+.qm-Button.qm-Button--small {
+    font-size: 0.75rem;
+    height: 28px;
+}

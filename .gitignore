@@ -1,0 +1,17 @@
+node_modules
+coverage
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+.idea
+
+.DS_Store
+Thumbs.db
+
+.qute/build/
+dist/
+TODO.txt
+

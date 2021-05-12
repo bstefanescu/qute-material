@@ -1,0 +1,8 @@
+<q:template export>
+<label q:class={ _computeClass() }>
+    <input class='qm-Checkbox-input' type='checkbox' q:ref='_input' q:attrs='name'>
+    <div class='qm-Checkbox-mark'></div>
+    <div class='qm-Ripple'></div>
+    <slot>{{label}}</slot>
+</label>
+</q:template>

@@ -1,0 +1,9 @@
+import mListItem from './list-item.js';
+<q:template export>
+    <div q:class={_computedClass} tabindex='-1' q:attrs='class,style'>
+        <slot/>
+        <for value={item in items}>
+            <m:list-item value={item} choice={multiple} checked={isChecked(item)}/>
+        </for>
+    </div>
+</q:template>

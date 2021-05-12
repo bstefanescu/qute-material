@@ -1,0 +1,64 @@
+
+
+$dropdown-size: 24px;
+$dropdown-line-width: 8px;
+$dropdown-line-thickness: 2px;
+
+$dropdown-size--small: 18px;
+$dropdown-line-width--small: 6px;
+$dropdown-line-thickness--small: 1px;
+
+
+$dropdown-size--large: 36px;
+$dropdown-line-width--large: 12px;
+$dropdown-line-thickness--large: 3px;
+
+$dropdown-size--xlarge: 48px;
+$dropdown-line-width--xlarge: 16px;
+$dropdown-line-thickness--xlarge: 4px;
+
+
+.qm-DropdownIcon {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+
+    width: $dropdown-size;
+    height: $dropdown-size;
+}
+
+.qm-DropdownIcon:before, .qm-DropdownIcon:after {
+    backface-visibility: hidden;
+    position:absolute;
+    display:block;
+    content: "";
+    width: $dropdown-line-width;
+    height: $dropdown-line-width;
+    border-bottom: $dropdown-line-thickness solid currentColor;
+    border-right: $dropdown-line-thickness solid currentColor;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) rotate(45deg);
+    will-change: transform;
+    transition: transform .2s ease-out;
+}
+
+.qm-DropdownIcon.is-active:before {
+    display: block;
+    /*transform: rotate(-315deg);*/
+    top: 50%;
+    transform: translate(-50%, -80%) rotate(405deg);
+}
+.qm-DropdownIcon.is-active:after {
+    display: block;
+    top: 50%;
+    /*color: red;*/
+    transform: translate(-50%, 20%) rotate(225deg);
+}

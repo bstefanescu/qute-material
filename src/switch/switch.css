@@ -1,0 +1,95 @@
+/* 10_[20__20]_10 */
+
+.qm-Switch {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    height: 40px;
+    width: 60px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.qm-Switch-input {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+/* :after and :before is not in FF / safari on empty elements like input so we have to
+
+/* the thumb */
+.qm-Switch:before {
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+
+    left: 10px;
+    top: 10px; /* it is centered inside a 40px rect: (40-20)/2 */
+    height: 20px;
+    width: 20px;
+
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+
+    background: white;
+
+    border: 1px solid gray;
+    transition: transform 0.09s ease-out, backgroundc-color 0.09s ease-out;
+    will-change: transform, backgroundc-color;
+
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.qm-Switch.is-checked:before {
+    transform: translateX(16px);
+    background-color: #6200ee;
+}
+/* the track */
+.qm-Switch:after {
+    content: "";
+    display: block;
+    position: absolute;
+    pointer-events: none;
+
+    left: 10px;
+    top: 13px; /* (40-14)/2 */
+    width: 36px;
+    height: 14px;
+    margin: 0;
+    padding: 0;
+
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.qm-Switch.is-checked:after {
+    opacity: 0.45;
+    background-color: #6200ee;
+}
+.qm-Switch .qm-Ripple {
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    color: rgba(98, 0, 238, 1);
+
+    transition: transform 0.09s ease-out;
+    will-change: transform;
+}
+.qm-Switch.is-checked .qm-Ripple {
+    transform: translateX(16px);
+}
+
+/* same as in checkbox */
+.qm-Switch:hover .qm-Ripple,
+.qm-Switch-input:hover:not(:disabled) ~ .qm-Ripple,
+.qm-Switch-input:focus:not(:disabled) ~ .qm-Ripple {
+    background-color: rgba(98, 0, 238, 0.09);
+}

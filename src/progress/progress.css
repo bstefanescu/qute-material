@@ -1,0 +1,60 @@
+
+$progress-color: rgba(98, 0, 238, 1);
+$progress-bgcolor: rgba(98, 0, 238, 0.5);
+
+.qm-Progress {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 4px;
+    width: 100%;
+    background-color: $progress-bgcolor;
+    overflow-x: hidden;
+    overflow-y: visible;
+    position: relative;
+}
+
+.qm-Progress-bar {
+    box-sizing: border-box;
+    position: absolute;
+    height: 6px;
+    left:0;
+    top:-1px;
+
+    width: 0;
+    background-color: $progress-color;
+    will-change: width;
+    transition: width .1s ease;
+}
+
+.qm-Progress-wave {
+    box-sizing: border-box;
+    position: absolute;
+    height: 6px;
+    left:0;
+    top:-1;
+
+    width: 20%;
+    background-color: $progress-color;
+    animation-name: qm-Progress-wave;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease ;/*cubic-bezier(0.5, 1, 0.89, 1);*/
+    will-change: left, width, margin-left;
+}
+
+@keyframes qm-Progress-wave {
+    0% {
+        margin-left: 0;
+        left:0;
+        width:0;
+    }
+    10% {
+        left:0%;
+        width: 10%;
+    }
+    100% {
+        margin-left:20%;
+        left: 80%;
+        width:100%;
+    }
+  }

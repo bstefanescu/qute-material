@@ -1,0 +1,91 @@
+
+      .qm-Checkbox {
+        box-sizing: border-box;
+        position: relative;
+        margin:0; padding:0;
+        height:40px;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        line-height: 18px;
+      }
+
+      .qm-Checkbox-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .qm-Checkbox-mark {
+        box-sizing: border-box;
+        position:relative;
+        margin: 11px;
+        width:18px;
+        height:18px;
+        border-radius: 2px;
+        border: 2px solid currentColor;
+        pointer-events: none;
+        opacity: 0.8;
+        transition: background-color, border-color;
+        transition-duration: .3s;
+        transition-timing-function: ease-in; /*cubic-bezier(0.4, 0, 0.6, 1)*/
+        will-change: background-color, border-color;
+      }
+
+      /* create a check mark using the bottom and right border of an empty element */
+      .qm-Checkbox-mark:after {
+        box-sizing: border-box;
+        content: "";
+        display:block;
+        position: absolute;
+        opacity: 0.8;
+        border-style: solid;
+        border-color: transparent; /* do not show the check when not checked */
+        border-width: 0 3px 3px 0;
+        top: 4px; /* 0px */
+        left: 4px; /* 4px */
+        width: 6px;
+        height: 6px; /*12*/
+        transform: rotate(45deg); /* rotate so that the visible  borders looks like a check mark */
+
+        will-change: height, top, left, border-color;
+        transition: height, top, left, border-color;
+        transition-duration: .2s;
+        transition-timing-function: ease-out;
+      }
+
+      .qm-Checkbox-input:checked ~ .qm-Checkbox-mark:after {
+        border-color:rgba(98, 0, 238, 1); /* show the checkbox (border) when checked */
+        height: 12px;
+        top: 0px;
+        left: 4px;
+      }
+      .qm-Checkbox-input:checked ~ .qm-Checkbox-mark {
+          border-color: rgba(98, 0, 238, 1);
+      }
+
+      .qm-Checkbox--bold .qm-Checkbox-input:checked ~ .qm-Checkbox-mark {
+        border-color: rgba(98, 0, 238, 1);
+        background-color: rgba(98, 0, 238, 1);
+      }
+      .qm-Checkbox--bold .qm-Checkbox-input:checked ~ .qm-Checkbox-mark:after {
+        border-color: white;
+      }
+
+      .qm-Checkbox .qm-Ripple {
+        left: 0; top: 0;
+        width:40px;
+        height:40px;
+        border-radius: 50%;
+        color: rgba(98, 0, 238, 1);
+      }
+
+      .qm-Checkbox:hover .qm-Ripple,
+      .qm-Checkbox-input:hover:not(:disabled) ~ .qm-Ripple,
+      .qm-Checkbox-input:focus:not(:disabled) ~ .qm-Ripple {
+        background-color: rgba(98, 0, 238, 0.09);
+      }

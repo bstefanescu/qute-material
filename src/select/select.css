@@ -1,0 +1,45 @@
+
+$select-title-border-color: #dedede;
+$select-title-bgcolor: white;
+$select-title-color: rgba(0,0,0,0.6);
+
+.qm-Select {
+    cursor:pointer;
+}
+
+.qm-Select-popup {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12);
+}
+
+.qm-Select-options {
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+.qm-Select-list:focus {
+    outline: none;
+}
+
+.qm-Select-dropdown-title {
+    font-weight: 600;
+    color: $select-title-color;
+    margin-top: 0;
+    padding: 10px 10px;
+    background: $select-title-bgcolor;
+    border-bottom: 1px solid $select-title-border-color;
+}
+
+.qm-Select.is-open .qm-Select-toggle {
+    z-index: 400; /* raise the toggle up to not be covered by the dropdown popup */
+}
+
+.qm-Select-toggle {
+    border-radius: 50%;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+}
+
+.qm-Select-toggle:hover {
+    opacity: 0.7;
+}

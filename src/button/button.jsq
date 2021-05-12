@@ -1,0 +1,14 @@
+import { mIcon } from '../icon';
+
+<q:template export='Button'>
+    <button class='qm-Button' q:class={_computeClass()} ?disabled={disabled} q:attrs='!variant size floating rounded'>
+    <slot>
+    <if value={icon}>
+        <m:icon class='qm-Button-icon' size={_iconSize}>{{icon}}</m:icon>
+    </if>
+    <if value={label}>
+        <span class='qm-Button-text'>{{label}}</span>
+    </if>
+    </slot>
+    </button>
+</q:template>

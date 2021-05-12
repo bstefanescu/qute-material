@@ -1,0 +1,5 @@
+import './box.css';
+
+<q:template export='mBox'>
+<div q:class={['qm-Box', $attrs.outline && 'qm-Box--outline', $attrs.floating && 'qm-Box--floating']} q:attrs='class,style,id'><slot/></div>
+</q:template>

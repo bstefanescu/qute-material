@@ -1,0 +1,224 @@
+/* inspired from https://jonsuh.com/hamburgers/ */
+
+/* default (normal) size */
+$hamburger-size: 24px;
+$hamburger-padding: 2px;
+$hamburger-line-width: 20px;
+$hamburger-line-height: 2px;
+$hamburger-line-radius: 2px;
+$hamburger-line-gap: 5px;
+
+/* large size */
+$hamburger-size--large: 36px;
+$hamburger-padding--large: 2px;
+$hamburger-line-width--large: 26px;
+$hamburger-line-height--large: 3px;
+$hamburger-line-radius--large: 2px;
+$hamburger-line-gap--large: 8px;
+
+/* xlarge size */
+$hamburger-size--xlarge: 48px;
+$hamburger-padding--xlarge: 2px;
+$hamburger-line-width--xlarge: 38px;
+$hamburger-line-height--xlarge: 4px;
+$hamburger-line-radius--xlarge: 2px;
+$hamburger-line-gap--xlarge: 10px;
+
+/* small size */
+$hamburger-size--small: 18px;
+$hamburger-padding--small: 1px;
+$hamburger-line-width--small: 16px;
+$hamburger-line-height--small: 2px;
+$hamburger-line-radius--small: 2px;
+$hamburger-line-gap--small: 4px;
+
+.qm-HamburgerIcon {
+  box-sizing: border-box;
+  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.qm-HamburgerIcon.is-active .qm-HamburgerIcon-inner, .qm-HamburgerIcon.is-active .qm-HamburgerIcon-inner::before, .qm-HamburgerIcon.is-active .qm-HamburgerIcon-inner::after {
+  background-color: currentColor;
+}
+
+.qm-HamburgerIcon-box {
+  box-sizing: border-box;
+  padding: $hamburger-padding;
+  width: $hamburger-size;
+  height: $hamburger-size;
+  display: block;
+  position: relative;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--large .qm-HamburgerIcon-box {
+  padding: $hamburger-padding--large;
+  width: $hamburger-size--large;
+  height: $hamburger-size--large;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--xlarge .qm-HamburgerIcon-box {
+  padding: $hamburger-padding--xlarge;
+  width: $hamburger-size--xlarge;
+  height: $hamburger-size--xlarge;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--small .qm-HamburgerIcon-box {
+  padding: $hamburger-padding--small;
+  width: $hamburger-size--small;
+  height: $hamburger-size--small;
+}
+
+.qm-HamburgerIcon-inner {
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.qm-HamburgerIcon-inner, .qm-HamburgerIcon-inner::before, .qm-HamburgerIcon-inner::after {
+  width: $hamburger-line-width;
+  height: $hamburger-line-height;
+  background-color: currentColor;
+  border-radius: $hamburger-line-radius;
+  position: absolute;
+  transition-property: transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--large .qm-HamburgerIcon-inner, .qm-HamburgerIcon.qm-HamburgerIcon--large .qm-HamburgerIcon-inner::before, .qm-HamburgerIcon.qm-HamburgerIcon--large .qm-HamburgerIcon-inner::after {
+  width: $hamburger-line-width--large;
+  height: $hamburger-line-height--large;
+  border-radius: $hamburger-line-radius--large;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--xlarge .qm-HamburgerIcon-inner, .qm-HamburgerIcon.qm-HamburgerIcon--xlarge .qm-HamburgerIcon-inner::before, .qm-HamburgerIcon.qm-HamburgerIcon--xlarge .qm-HamburgerIcon-inner::after {
+  width: $hamburger-line-width--xlarge;
+  height: $hamburger-line-height--xlarge;
+  border-radius: $hamburger-line-radius--xlarge;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--small .qm-HamburgerIcon-inner, .qm-HamburgerIcon.qm-HamburgerIcon--small .qm-HamburgerIcon-inner::before, .qm-HamburgerIcon.qm-HamburgerIcon--small .qm-HamburgerIcon-inner::after {
+  width: $hamburger-line-width--small;
+  height: $hamburger-line-height--small;
+  border-radius: $hamburger-line-radius--small;
+}
+
+.qm-HamburgerIcon-inner::before, .qm-HamburgerIcon-inner::after {
+  content: "";
+  display: block;
+}
+
+.qm-HamburgerIcon-inner::before {
+  top: -$hamburger-line-gap;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--large .qm-HamburgerIcon-inner::before {
+  top: -$hamburger-line-gap--large;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--xlarge .qm-HamburgerIcon-inner::before {
+  top: -$hamburger-line-gap--xlarge;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--small .qm-HamburgerIcon-inner::before {
+  top: -$hamburger-line-gap--small;
+}
+
+.qm-HamburgerIcon-inner::after {
+  bottom: -$hamburger-line-gap;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--large .qm-HamburgerIcon-inner::after {
+  bottom: -$hamburger-line-gap--large;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--xlarge .qm-HamburgerIcon-inner::after {
+  bottom: -$hamburger-line-gap--xlarge;
+}
+
+.qm-HamburgerIcon.qm-HamburgerIcon--small .qm-HamburgerIcon-inner::after {
+  bottom: -$hamburger-line-gap--small;
+}
+
+/* ------------------------------ cross ------------------ */
+
+.qm-HamburgerIcon--cross .qm-HamburgerIcon-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.qm-HamburgerIcon--cross .qm-HamburgerIcon-inner::before {
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+
+.qm-HamburgerIcon--cross .qm-HamburgerIcon-inner::after {
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.qm-HamburgerIcon--cross.is-active .qm-HamburgerIcon-inner {
+  transform: translate(-50%, -50%) rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.qm-HamburgerIcon--cross.is-active .qm-HamburgerIcon-inner::before {
+  top: 0;
+  /* move the line over the middle line and fade it */
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+
+.qm-HamburgerIcon--cross.is-active .qm-HamburgerIcon-inner::after {
+  bottom: 0;
+  /* move the line over the middle line and then rotate it */
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* ------------- Arrow turn ------------ */
+
+/* Arrow Turn */
+
+.qm-HamburgerIcon--arrow.is-active .qm-HamburgerIcon-inner {
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.qm-HamburgerIcon--arrow.is-active .qm-HamburgerIcon-inner::before {
+  top: 0;
+  transform-origin: top right;
+  transform: rotate(45deg) scale(0.5, 1);
+}
+
+.qm-HamburgerIcon--arrow.is-active .qm-HamburgerIcon-inner::after {
+  bottom: 0;
+  transform-origin: bottom right;
+  transform: rotate(-45deg) scale(0.5, 1);
+}
+
+/* Arrow Turn Right */
+
+.qm-HamburgerIcon--rarrow.is-active .qm-HamburgerIcon-inner {
+  transform: translate(-50%, -50%) rotate(-180deg);
+}
+
+.qm-HamburgerIcon--rarrow.is-active .qm-HamburgerIcon-inner::before {
+  top: 0;
+  transform-origin: top left;
+  transform: rotate(-45deg) scale(0.5, 1);
+}
+
+.qm-HamburgerIcon--rarrow.is-active .qm-HamburgerIcon-inner::after {
+  bottom: 0;
+  transform-origin: bottom left;
+  transform: rotate(45deg) scale(0.5, 1);
+}

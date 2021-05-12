@@ -1,0 +1,20 @@
+import { mIcon } from '../icon';
+
+<q:template export='Tab'>
+    <button class='qm-Tabs-item' data-tab={$attrs.name} q:emit-changetab-onclick={$attrs.name}>
+        <slot>
+            <if value={$attrs.icon}><m:icon class='qm-Tabs-icon'>{{$attrs.icon}}</m:icon></if>
+            <if value={$attrs.label}><span>{{$attrs.label}}</span></if>
+        </slot>
+    </button>
+</q:template>
+
+<q:template export='Tabs'>
+   	<nav class='qm-Tabs'>
+        <slot />
+        <q:for value='tab in normalizedTabs'>
+            <Tab name={tab.name} icon={tab.icon} label={tab.label} />
+        </q:for>
+        <i class='qm-Tabs-indicator'></i>
+    </nav>
+</q:template>

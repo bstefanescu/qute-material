@@ -1,0 +1,13 @@
+import { mIcon } from '../icon';
+
+<q:template export>
+    <div q:class={_computeClass()}>
+        <if value={icon}>
+            <m:icon class='qm-Chip-icon'>{{icon}}</m:icon>
+        <else-if value={$slots && $slots.icon} />
+            <span class='qm-Chip-icon'><slot name='icon'></slot></span>
+        </if>
+        <span class='qm-Chip-title'><slot>{{label}}</slot></span>
+        <if value={closeable}><span class='qm-Chip-close' q:emit-close-onclick></span></if>
+    </div>
+</q:template>

@@ -1,0 +1,101 @@
+
+$chip-bgcolor: rgb(222, 222, 222, .5);
+$chip-outline-bgcolor: transparent;
+$chip-outline-border-color: #dedede;
+$chip-color-active: rgba(98, 0, 238, 1);
+$chip-bgcolor-active: rgba(98, 0, 238, .2);
+$chip-outline-border-color-active: rgba(98, 0, 238, .3);
+
+.qm-Chip {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 12px;
+    white-space: nowrap;
+    font-size: 0.8125rem; /*13px*/
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+    background-color: $chip-bgcolor;
+    border: none;
+
+    transition: color, background-color, border-color;
+    transition-duration: .2s;
+    transition-timing-function: ease-in; /*cubic-bezier(0.4, 0, 0.6, 1)*/
+    will-change: color, background-color, border-color;
+}
+.qm-Chip:not(:first-child) {
+    margin-left: 8px;
+}
+.qm-Chip:not(:last-child) {
+    margin-right: 8px;
+}
+
+.qm-Chip--outline {
+    background-color: $chip-outline-bgcolor;
+    border: 1px solid $chip-outline-border-color;
+}
+
+.qm-Chip-title {
+    box-sizing: border-box;
+    line-height: 1;
+    flex: 1;
+    margin: 0 8px;
+}
+/*
+.qm-Chip-title:not(:only-child) {
+    margin: 0 8px;
+}
+*/
+.qm-Chip-icon {
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+.qm-Chip-close {
+    box-sizing: border-box;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+.qm-Chip-close:after {
+    box-sizing: border-box;
+    content: "\00D7";
+}
+
+input:checked + .qm-Chip-check {
+    display: inline-block;
+}
+.qm-Chip-check {
+    display: none;
+}
+
+.qm-Chip.is-active {
+    color: $chip-color-active;
+    background-color: $chip-bgcolor-active;
+}
+
+.qm-Chip.qm-Chip--outline.is-active {
+    border-color: $chip-outline-border-color-active;
+}
+
+.qm-Chip.qm-Chip--clickable {
+    cursor: pointer;
+}
+.qm-Chip input {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.qm-Chip-row {
+    display: flex;
+}

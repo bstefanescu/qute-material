@@ -1,0 +1,53 @@
+
+$fab-menu-gap: 10px;
+$fab-menu-item-gap: 6px;
+$fab-menu-zindex: 1000000;
+
+.qm-Fab {
+    z-index: $fab-menu-zindex;
+    display: flex;
+    align-items: center;
+}
+.qm-Fab-menu {
+    align-items: center;
+    display: none;
+}
+.qm-Fab.qm-Fab--top, .qm-Fab.qm-Fab--top .qm-Fab-menu {
+    flex-direction: column-reverse;
+}
+.qm-Fab.qm-Fab--top .qm-Fab-menu {
+    margin-bottom: $fab-menu-gap;
+}
+.qm-Fab.qm-Fab--bottom, .qm-Fab.qm-Fab--bottom .qm-Fab-menu {
+    flex-direction: column;
+}
+.qm-Fab.qm-Fab--bottom .qm-Fab-menu {
+    margin-top: $fab-menu-gap;
+}
+.qm-Fab.qm-Fab--left, .qm-Fab.qm-Fab--left .qm-Fab-menu {
+    flex-direction: row-reverse;
+}
+.qm-Fab.qm-Fab--left .qm-Fab-menu {
+    margin-right: $fab-menu-gap;
+}
+.qm-Fab.qm-Fab--right, .qm-Fab.qm-Fab--right .qm-Fab-menu {
+    flex-direction: row;
+}
+.qm-Fab.qm-Fab--right .qm-Fab-menu {
+    margin-left: $fab-menu-gap;
+}
+
+.qm-Fab-item {
+    backface-visibility: hidden;
+    transform: scale(0.7);
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 0.4s ease-in, transform 0.4s ease-in-out;
+    margin: $fab-menu-item-gap 0;
+}
+.qm-Fab-item.is-visible {
+    transform: scale(1);
+}
+.qm-Fab.is-open > .qm-Fab-menu {
+    display: flex;
+}

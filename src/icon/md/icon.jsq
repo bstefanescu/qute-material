@@ -1,0 +1,21 @@
+
+
+function computeClass(attrs) {
+    let classNames = ['material-icons'];
+    if (attrs) {
+        if (attrs.theme) {
+            classNames.push('qm-Icon--' + attrs.theme);
+        }
+        if (attrs.size) {
+            classNames.push('qm-Icon--' + attrs.size);
+        }
+        if (attrs.disabled) {
+            classNames.push('is-disabled');
+        }
+    }
+    return classNames;
+}
+
+<q:template import='computeClass' export>
+    <i q:class={ computeClass($attrs) } q:attrs='class'><slot>{{$attrs.name}}</slot></i>
+</q:template>

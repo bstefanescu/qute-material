@@ -1,0 +1,17 @@
+import { mDivider } from '../divider';
+import { mButton } from '../button';
+
+<q:template export>
+    <div class='qm-RailMenu-container'>
+    <div q:class={computedClass} q:ref='_railEl'>
+        <div class='qm-RailMenu-rail'>
+            <div class='qm-RailMenu-items'>
+                <slot />
+            </div>
+        </div>
+        <div class='qm-RailMenu-menu'>
+            <q:view is={activeItemMenu} />
+        </div>
+    </div>
+    </div>
+</q:template>

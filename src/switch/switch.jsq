@@ -1,0 +1,8 @@
+<q:template export>
+<div style='display:flex; align-items:center;color: rgba(0,0,0,0.5)'>
+    <label q:class={ _computeClass() }>
+        <input type='checkbox' class='qm-Switch-input' q:ref='_input' q:attrs='name'/>
+    </label>
+    <span>{{label}}</span>
+</div>
+</q:template>

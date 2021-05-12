@@ -1,0 +1,17 @@
+import { mToggle } from '../toggle';
+import { mIcon } from '../icon';
+import '../icons/check';
+
+<q:template export>
+    <div q:class={['qm-List-item', choice && 'qm-List-item--choice', checked && 'is-checked']} tabindex='-1'>
+        <slot>
+            <if value={icon}>
+            <m:icon class='qm-List-item-icon'>{{icon}}</m:icon>
+            </if>
+            <span class='qm-List-item-label'>{{label}}</span>
+            <if value='choice'>
+            <m:toggle icon='qm:check' active={checked} class='qm-List-item-check push'/>
+            </if>
+        </slot>
+    </div>
+</q:template>

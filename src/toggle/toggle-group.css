@@ -1,0 +1,7 @@
+
+$toggle-group-active-bgcolor: #e0e0e0;
+
+.qm-Toggle-group i.is-active {
+    display:flex;
+    background-color: $toggle-group-active-bgcolor;
+}

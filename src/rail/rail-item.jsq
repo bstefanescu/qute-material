@@ -1,0 +1,7 @@
+import { mIcon } from '../icon';
+
+<q:template export>
+    <button q:class={computedClass} title={tooltip || label} q:emit-action-onclick  q:attrs='class,style'>
+        <m:icon name={icon} />
+    </button>
+</q:template>

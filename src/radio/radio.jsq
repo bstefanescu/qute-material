@@ -1,0 +1,8 @@
+<q:template export>
+<label class='qm-Radio' q:attrs='class'>
+    <input class='qm-Radio-input' type='radio' q:ref='_input' q:attrs='name'>
+    <div class='qm-Radio-mark'></div>
+    <div class='qm-Ripple'></div>
+    <slot>{{label}}</slot>
+</label>
+</q:template>

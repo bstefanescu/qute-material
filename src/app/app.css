@@ -1,0 +1,68 @@
+$App-header-height: 56px;
+$App-header-padding: 16px;
+$App-header-lineHeight: 24px;
+$App-header-color: #fff;
+$App-header-bgcolor: #333;
+$App-header-zIndex: 1000;
+
+
+html, body {
+    margin:0; padding:0;
+    height: 100%;
+}
+
+.qm-App {
+    box-sizing: border-box;
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+.qm-App.qm-App--fixed-header {
+    padding-top: $App-header-height;
+}
+.qm-App.qm-App--fixed-footer {
+    padding-bottom: $App-header-height;
+}
+
+.qm-App-header, .qm-App-footer {
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    overflow: hidden;
+
+    height: $App-header-height;
+    line-height: $App-header-lineHeight;
+    z-index: $App-header-zIndex;
+    color: $App-header-color;
+    padding: $App-header-padding;
+    background-color: $App-header-bgcolor;
+}
+
+.qm-App-header {
+    top: 0;
+}
+
+.qm-App-footer {
+    bottom: 0;
+}
+
+.qm-App-page, .qm-App-sidebar {
+    box-sizing: border-box;
+    position:relative;
+    margin:0; padding: 0;
+    overflow-y: auto;
+}
+.qm-App-page {
+    flex: 1;
+}

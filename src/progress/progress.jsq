@@ -1,0 +1,9 @@
+<q:template export>
+    <div class='qm-Progress' q:attrs>
+        <if value={value < 0}>
+        <div class='qm-Progress-wave'></div>
+        <else />
+        <div class='qm-Progress-bar' q:style={{width: percentValue+'%'}}></div>
+        </if>
+    </div>
+</q:template>

@@ -1,0 +1,14 @@
+import {mButton} from '../button';
+
+<q:template export>
+    <div class='qm-Toast'>
+    <div class='qm-Toast-message'>
+        <div class='qm-Toast-text' q:html={message.text} />
+        <if value={message.action}>
+        <div class='qm-Toast-action'>
+            <m:button variant='flat' @click='e => message.action.run(toast)'>{{message.action.label}}</m:button>
+        </div>
+        </if>
+    </div>
+    </div>
+</q:template>

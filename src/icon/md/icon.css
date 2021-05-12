@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+/* Rules for sizing the icon. */
+.material-icons.qm-Icon--small { font-size: 18px; }
+.material-icons.qm-Icon--normal { font-size: 24px; }
+.material-icons.qm-Icon--large { font-size: 36px; }
+.material-icons.qm-Icon--xlarge { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.qm-Icon--dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.qm-Icon--dark.is-disabled { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.qm-Icon--light { color: rgba(255, 255, 255, 1); }
+.material-icons.qm-Icon--light.is-disabled { color: rgba(255, 255, 255, 0.3); }

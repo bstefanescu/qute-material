@@ -1,0 +1,13 @@
+<q:template export>
+    <div class='qm-Collapsible' q:class={_computedClass}>
+        <label class='qm-Collapsible-header'>
+            <input q:ref='_input' type='checkbox' class='qm-Collapsible-toggle' />
+            <div class='qm-Collapsible-title'>{{title}}</div>
+            <div><slot name='actions'/></div>
+        </label>
+        <div class='qm-Collapsible-body'>
+            <slot/>
+        </div>
+    </div>
+</q:template>
+

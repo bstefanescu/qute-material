@@ -1,0 +1,22 @@
+import { mIcon } from '../icon';
+
+<q:template export>
+<div class='qm-Input-row'>
+    <div q:class={ _computeClass() }>
+        <input class='qm-Textbox-input' q:attrs='value,type,readonly' q:ref='_input'>
+        <label class='qm-Textbox-label'>{{label}}</label>
+        <slot name='left'>
+        <if value={leftIcon}>
+            <m:icon class='qm-Textbox-left-icon'>{{leftIcon}}</m:icon>
+        <else/>
+            <outer-slot name='left'><span class='qm-Textbox-left-icon'><slot name='left'/></span></outer-slot>
+        </if>
+        </slot>
+        <if value={rightIcon}>
+            <m:icon class='qm-Textbox-right-icon'>{{rightIcon}}</m:icon>
+        <else />
+            <outer-slot name='right'><span class='qm-Textbox-right-icon'><slot name='right'/></span></outer-slot>
+        </if>
+    </div>
+</div>
+</q:template>

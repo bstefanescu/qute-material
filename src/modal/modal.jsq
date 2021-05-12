@@ -1,0 +1,31 @@
+import { qModal } from '@qutejs/modal';
+import { mDivider } from '../divider';
+import { mIconButton } from '../icon-button';
+import { mProgress } from '../progress';
+import '../icons/times';
+
+
+<q:template export>
+    <q:modal q:attrs='!width,height' q:call='enhanceModal'>
+    <div class='qm-Modal-panel'>
+        <div class='qm-Modal-header'>
+        <q:slot name='header'>&nbsp;</q:slot>
+        <m:icon-button class='qm-Modal-close' icon='qm:times' rounded data-modal-action='close' />
+        </div>
+        <m:divider />
+        <div class='qm-Modal-body' style={computedBodyStyle}>
+        <q:slot name='body'>
+        </q:slot>
+        </div>
+        <m:divider />
+        <div class='qm-Modal-footer'>
+        <q:slot name='footer'>
+            <div class='qm-Modal-actions'>
+            <q:slot name='actions' />
+            </div>
+        </q:slot>
+        </div>
+        <m:progress q:show={showProgress} value={progress} class='qm-Modal-progress'/>
+    </div>
+    </q:modal>
+</q:template>

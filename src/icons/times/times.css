@@ -1,0 +1,23 @@
+.qm-TimesIcon {
+    position: relative;
+    display:inline-block;
+    width: 24px;
+    height: 24px;
+}
+.qm-TimesIcon:before,.qm-TimesIcon:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 12px;
+    border-radius: 2px;
+    background-color: currentColor;
+    overflow: hidden;
+    left:50%;
+    top:50%;
+}
+.qm-TimesIcon:before {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.qm-TimesIcon:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+}

@@ -1,0 +1,46 @@
+
+$list-margin: 0;
+$list-padding: 0;
+$list-line-height: 1.5rem;
+$list-font-size: 1rem;
+$list-item-padding: 12px 12px;
+$list-selected-bgcolor: rgba(0,0,0,.4);
+$list-selected-color: white;
+$list-hover-color: rgba(0,0,0,.1);
+
+.qm-List {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.qm-List-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    line-height: $list-line-height;
+    font-size: $list-font-size;
+    padding: $list-item-padding;
+    overflow: hidden;
+}
+
+/* .push is an utility class ypou can use on a child to be pushed on the right */
+.qm-List-item .push {
+    margin-left: auto;
+}
+
+.qm-List-item.is-checked:not(.qm-List-item--choice) {
+    background-color: $list-selected-bgcolor;
+    color: $list-selected-color;
+}
+
+/* the item was selected using arrows / hover but not yet activated (i.e. checked)*/
+.qm-List-item:focus, .qm-List-item:hover {
+    background-color: $list-hover-color;
+}
+.qm-List-item:focus {
+    outline:none;
+}
+.qm-List-item-icon {
+    margin-right: 10px;
+}

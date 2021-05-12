@@ -1,0 +1,23 @@
+
+
+function computeClass(attrs) {
+    let type = 'cross';
+    const name = attrs.name;
+    const i = name.indexOf(':');
+    if (i > -1) {
+      type = name.substring(i+1);
+    }
+    return [
+        "qm-HamburgerIcon",
+        "qm-HamburgerIcon--"+type,
+        attrs.size && "qm-HamburgerIcon--"+attrs.size
+    ];
+}
+
+<q:template export import='computeClass'>
+<i q:class={computeClass($attrs)}>
+  <span class="qm-HamburgerIcon-box">
+    <span class="qm-HamburgerIcon-inner"></span>
+  </span>
+</i>
+</q:template>

@@ -1,0 +1,32 @@
+import { mBox } from '../box';
+import { mIcon } from '../icon';
+import { mButton } from '../button';
+import { mToggle } from '../toggle';
+import { mList } from '../list';
+import { qPopup } from '@qutejs/popup';
+import '../icons/dropdown'; // force loading dropdown icon
+
+<q:template export>
+    <div q:class={['qm-Input-row qm-Select', _popupVisible && 'is-open']}>
+        <div q:class={ _computedClass }>
+            <div  class='qm-Textbox-input' tabindex='0' q:html={_valueText} @keyup='onKeyUp'></div>
+            <label class='qm-Textbox-label' q:style={_labelStyle}>{{label}}</label>
+            <if value={icon}>
+                <m:icon class='qm-Textbox-left-icon'>{{icon}}</m:icon>
+            </if>
+            <m:toggle icon='qm:dropdown' class='qm-Textbox-right-icon qm-Select-toggle' @click='toggleDropdown' />
+        </div>
+        <q:popup class='qm-Select-popup' position='coverdown fill' q:ref='_popup' @ready='onPopupReady' @close='onPopupClose'>
+            <m:box class='qm-Box--outline qm-Box--nopadding'>
+            <div class='qm-Select-dropdown-title' >{{dropdownTitle || label}}</div>
+            <div class='qm-Select-options'>
+            <m:list items={options} class='qm-Select-list' multiple={multiple}
+                is-checked={_isItemChecked}
+                q:ref='_list'
+                @change='onSelectionChange' @cancel='onCancel'
+                />
+            </div>
+            </m:box>
+        </q:popup>
+    </div>
+</q:template>

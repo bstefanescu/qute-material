@@ -1,0 +1,122 @@
+
+.qm-Tabs {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* hide scrollbar in FF */
+    -ms-overflow-style: none; /* hide scrollbar in IE */
+
+}
+.qm-Tabs::-webkit-scrollbar { /* hide scrollbar in Chrome, Safari, Edge */
+    display: none;
+}
+
+
+.qm-Tabs-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+    white-space: nowrap;
+    text-transform: uppercase;
+    text-align: center;
+
+    -webkit-font-smoothing: antialiased;
+    font-size: .875rem;
+    line-height: 2.25rem;
+    font-weight: 500;
+    letter-spacing: .0892857143em;
+
+    color: rgb(0,0,0,.6);
+
+    /*height: 48px;*/
+
+    padding: 0px 24px;
+    background: none;
+    border: none;
+
+    will-change: color;
+    transition: color .2s;
+}
+.qm-Tabs-item::-moz-focus-inner {
+    border:0;
+}
+.qm-Tabs-item.is-active {
+    color: #6200ee;
+}
+
+.qm-Tabs-item:hover:not(.is-active),
+.qm-Tabs-item:focus,
+.qm-Tabs-item:active {
+    background-color: rgba(98, 0, 238, 0.1);
+}
+
+.qm-Tabs-indicator {
+    display: block;
+    position: absolute;
+    padding: 0; margin: 0;
+    height: 0px;
+    bottom: 0px;
+    border-bottom: 2px solid #6200ee;
+    will-change: left, right;
+}
+
+.qm-Tabs-indicator.is-moving-left, .qm-Tabs-indicator.is-moving-right {
+    transition: left 0.3s cubic-bezier(0.5, 1, 0.89, 1), right 0.3s cubic-bezier(0.5, 1, 0.89, 1);
+}
+.qm-Tabs-indicator.qm-Tabs-indicator--trail.is-moving-left {
+    transition: 0.3s left cubic-bezier(0.5, 1, 0.89, 1), 0.3s right cubic-bezier(0.5, 1, 0.89, 1) 0.09s;
+}
+.qm-Tabs-indicator.qm-Tabs-indicator--trail.is-moving-right {
+    transition: 0.3s left cubic-bezier(0.5, 1, 0.89, 1) 0.09s, 0.3s right cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.qm-Tabs-icon {
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    margin-right: 6px;
+    margin-left:-4px;
+}
+
+.qm-Tabs--stacked .qm-Tabs-item {
+    height: 72px; /*48px;*/
+    flex-direction: column;
+}
+
+.qm-Tabs--stacked .qm-Tabs-icon {
+    margin:0;
+}
+
+.qm-Tabs--elastic {
+    width: 100%;
+}
+
+.qm-Tabs--elastic .qm-Tabs-item {
+    flex: 1 1 0px;
+}
+
+/*
+.qm-Ripple-wave {
+    background-color: rgba(98, 0, 238, 0.3);
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    will-change: opacity, transform;
+}
+*/

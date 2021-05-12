@@ -1,0 +1,9 @@
+import { mIcon } from '../icon';
+
+<q:template export>
+    <label q:class={_computeClass()}>
+        <input q:ref='_input' type='checkbox' q:attrs='name' />
+        <m:icon q:show={!isExclusive} class='qm-Chip-icon qm-Chip-check'>check</m:icon>
+        <span class='qm-Chip-title'><slot>{{label}}</slot></span>
+    </label>
+</q:template>

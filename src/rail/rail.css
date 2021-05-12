@@ -1,0 +1,114 @@
+/* A navigation rail with an expandable sub menu */
+
+$RailMenu-rail-width:  72px; /* 72 dp */
+$RailMenu-border-color: #e0e0e0;
+$RailMenu-rail-bgcolor: #333;
+$RailMenu-rail-color: rgba(255,255,255, 0.6);
+$RailMenu-rail-active-color: white;
+$RailMenu-menu-bgcolor: #f6f6f6;
+$RailMenu-menu-color: #333;
+$RailMenu-transition: 0.3s cubic-bezier(0.5, 1, 0.89, 1); /*.25s ease-in-out;*/
+
+/**
+ * The container is usefull when embeding the rail in a drawer to not alter the rail element css rules.
+ */
+.qm-RailMenu-container {
+    backface-visibility: hidden;
+    margin: 0; padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.qm-RailMenu {
+    box-sizing: content-box; /* since we use scrollWidth to set the width */
+    white-space: nowrap;
+    position:relative;
+    margin:0;
+    padding:0;
+
+    width: $RailMenu-rail-width;
+    height: 100%;
+    border-right: 1px solid $RailMenu-border-color;
+    will-change: width;
+    transition: width $RailMenu-transition;
+    overflow: hidden;
+    background: $RailMenu-menu-bgcolor;
+    font-size: 0;
+}
+
+.qm-RailMenu--floating {
+    box-shadow: 2px 0 2px -1px rgb(0 0 0 / 14%);
+}
+
+
+.qm-RailMenu-rail, .qm-RailMenu-menu {
+    box-sizing: border-box;
+    display:inline-block;
+    position:relative;
+    height: 100%;
+    font-size: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.qm-RailMenu-rail {
+    background-color: $RailMenu-rail-bgcolor;
+    color: $RailMenu-rail-color;
+}
+
+.qm-RailMenu-menu {
+    padding: 8px 10px;
+    background-color: $RailMenu-menu-bgcolor;
+    color: $RailMenu-menu-color;
+}
+
+.qm-RailMenu-items {
+    box-sizing: border-box;
+
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+}
+
+.qm-RailMenu-fab {
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.qm-RailMenu-logo {
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+
+.qm-RailMenu-item {
+    position: relative;
+    box-sizing: border-box;
+    border:0; margin:0; padding:0; background:none;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+
+    color: $RailMenu-rail-color;
+    width: $RailMenu-rail-width;
+    height: $RailMenu-rail-width;
+
+}
+.qm-RailMenu-item:hover {
+    color: $RailMenu-rail-active-color;
+}
+
+.qm-RailMenu-item.push {
+    margin-top: auto;
+}
+
+.qm-RailMenu-item.is-active {
+    color: $RailMenu-rail-active-color;
+}

@@ -1,0 +1,7 @@
+import { mIcon } from '../icon';
+
+<q:template export='IconButton'>
+    <button q:class={_computeClass()} q:attrs='!size floating rounded'>
+        <m:icon size={$attrs.size||'normal'} name={icon}><slot /></m:icon>
+    </button>
+</q:template>

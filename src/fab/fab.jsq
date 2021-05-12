@@ -1,0 +1,17 @@
+import {mIconButton} from '../icon-button';
+import {mToggle} from '../toggle';
+
+// we cannot use q:emit-action-onclick={item.action} since it cancel the click event
+// and the ripple will no more work
+<q:template export>
+    <div q:class={_computeClass()} q:attrs='class'>
+        <m:toggle rounded floating variant='primary' size='large' icon={icon} @click='handlePrimaryAction' />
+        <div class='qm-Fab-menu'>
+        <for value='item in items'>
+            <div class='qm-Fab-item'>
+                <m:icon-button rounded floating variant='primary' size='normal' icon={item.icon} data-action={item.action} />
+            </div>
+        </for>
+        </div>
+    </div>
+</q:template>

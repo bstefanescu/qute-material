@@ -1,0 +1,97 @@
+
+
+/* same as qm-Checkbox: reuse? */
+.qm-Radio {
+    box-sizing: border-box;
+    position: relative;
+    margin:0; padding:0;
+    height:40px;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    line-height: 18px;
+}
+
+/* same as qm-Checkbox-input: reuse? */
+.qm-Radio-input {
+    box-sizing: border-box;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* same as qm-Check-mark but border-radius: 50%; */
+.qm-Radio-mark {
+    box-sizing: border-box;
+    position:relative;
+    margin: 11px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    pointer-events: none;
+    opacity: 0.8;
+    transition: background-color, border-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in; /*cubic-bezier(0.4, 0, 0.6, 1)*/
+    will-change: background-color, border-color;
+}
+
+/* differences from checkbox: border, opacity, background-color, transform */
+.qm-Radio-mark:after {
+    box-sizing: border-box;
+    content: "";
+    display:block;
+    position: absolute;
+    opacity: 0;
+
+    background-color: currentColor;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+/* ((parentWidth - (2 * parentBorderSize)) - width) / 2 => 3 */
+/* top: 3px; left: 3px;*/
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    will-change: color, opacity;
+    transition: color, opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+}
+
+.qm-Radio-input:checked ~ .qm-Radio-mark:after {
+    box-sizing: border-box;
+
+    opacity: 0.8;
+
+    /*transform: translate(-50%, -50%) scale(2);
+    transform-origin: center;*/
+    color: rgba(98, 0, 238, 1);
+}
+
+.qm-Radio-input:checked ~ .qm-Radio-mark {
+    color: rgba(98, 0, 238, 1);
+}
+
+/* same as in checkbox */
+.qm-Radio .qm-Ripple {
+    border-radius: 50%;
+    left: 0; top: 0;
+    width:40px;
+    height:40px;
+    color: rgba(98, 0, 238, 1);
+  }
+
+  .qm-Radio:hover .qm-Ripple,
+  .qm-Radio-input:hover:not(:disabled) ~ .qm-Ripple,
+  .qm-Radio-input:focus:not(:disabled) ~ .qm-Ripple {
+    background-color: rgba(98, 0, 238, 0.09);
+  }

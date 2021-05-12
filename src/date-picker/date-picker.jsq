@@ -1,0 +1,14 @@
+import {mIconButton} from '../icon-button';
+import { mIcon } from '../icon';
+
+<q:template export>
+    <div q:class={_computedClass} q:attrs>
+        <div class='qm-DatePicker-header'>
+        <div class='qm-DatePicker-header-label'>{{dateLabel}}</div>
+        <m:icon-button rounded icon={toggleModeIcon} class='qm-DatePicker-nav qm-DatePicker-header-dropdown' @click='toggleYearPage' />
+        <m:icon-button rounded icon='arrow_left' class='qm-DatePicker-nav qm-DatePicker-header-prev' @click='showPrevPage'/>
+        <m:icon-button rounded icon='arrow_right' class='qm-DatePicker-nav qm-DatePicker-header-next' @click='showNextPage' />
+        </div>
+        <dom value={getDateTable()} />
+    </div>
+</q:template>

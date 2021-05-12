@@ -1,0 +1,48 @@
+$modal-close-color: #9e9e9e;
+
+.qm-Modal-footer {
+    display: flex;
+    align-items: end;
+    padding: 16px 10px;
+}
+
+.qm-Modal-footer > button {
+    margin: 0 8px;
+}
+
+.qm-Modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+.qm-Modal-panel {
+    display: flex;
+    flex-direction: column;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.qm-Modal-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 18px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    line-height: 36px; /* same as buttons */
+}
+
+.qm-Modal-body {
+    overflow-y: auto;
+    min-height: 50px;
+    max-height: 600px;
+    padding: 16px 18px;
+}
+
+.qm-Modal-close {
+    color: $modal-close-color;
+    margin-left: auto !important;
+}
+.qm-Modal-close:hover {
+    opacity: .7;
+}

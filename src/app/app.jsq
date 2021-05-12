@@ -1,0 +1,19 @@
+<q:template export='AppTemplate'>
+    <div dir={dir} q:attrs q:class={_computedClass}>
+    <if value='hasHeader'>
+    <div class='qm-App-header'><slot name='header' /></div>
+    </if>
+    <slot/>
+    <if value='hasFooter'>
+    <div class='qm-App-footer'><slot name='footer' /></div>
+    </if>
+    </div>
+</q:template>
+
+<q:template export='mAppPage'>
+    <div class='qm-App-page' q:attrs><slot /></div>
+</q:template>
+
+<q:template export='mAppSidebar'>
+    <div class='qm-App-sidebar' q:attrs><slot /></div>
+</q:template>

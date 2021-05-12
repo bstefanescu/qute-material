@@ -1,0 +1,159 @@
+/*
+see https://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html
+*/
+
+$slider-track-color: rgba(98, 0, 238, 0.3);
+$slider-track-progress-color: #6200ee;
+$slider-track-thumb-size: 12px;
+$slider-track-thumb-color: $slider-track-progress-color;
+$slider-track-thumb-focus-color: $slider-track-progress-color;
+/*$slider-track-thumb-focus-shadow: 0px 0px 0px 12px rgba(98, 0, 238, 0.1);*/
+$slider-track-thumb-focus-shadow: 0px 0px 0px 12px rgba(98, 0, 238, 0.1), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0,0,0,.12);
+$slider-track-thumb-active-shadow: $slider-track-thumb-focus-shadow;
+
+$slider-tooltip-bgcolor: rgba(0,0,0,0.4);
+$slider-tooltip-color: white;
+
+%slider-track {
+    box-sizing: border-box;
+    appearance: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+%slider-thumb {
+    box-sizing: border-box;
+    appearance: none;
+    border: none;
+    outline: none;
+    width: $slider-track-thumb-size;
+    height: $slider-track-thumb-size;
+    border-radius: 50%;
+    background: $slider-track-thumb-color;
+}
+
+.qm-Slider {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    overflow: visible; /* for tooltips */
+    height: 18px;
+}
+.qm-Slider-input {
+    box-sizing: border-box;
+    appearance: none;
+    user-select: none;
+    outline: 0;
+    padding: 0;
+    margin:0;
+    z-index: 1;
+    cursor: pointer;
+
+    height: 2px;
+    width: 100%;
+
+    color: $slider-track-progress-color; /* the progress color used in liner-gradient from js */
+    background: $slider-track-color;
+}
+
+.qm-Slider-input::-webkit-slider-runnable-track {
+    @extend %slider-track;
+}
+
+.qm-Slider-input::-webkit-slider-thumb {
+    @extend %slider-thumb;
+}
+.qm-Slider-input:active::-webkit-slider-thumb {
+    box-shadow: $slider-track-thumb-active-shadow;
+}
+.qm-Slider-input:focus::-webkit-slider-thumb {
+    box-shadow: $slider-track-thumb-focus-shadow;
+}
+
+.qm-Slider-input::-moz-range-track {
+    @extend %slider-track;
+}
+
+.qm-Slider-input::-moz-range-thumb {
+    @extend %slider-thumb;
+}
+.qm-Slider-input:active::-moz-range-thumb {
+    box-shadow: $slider-track-thumb-active-shadow;
+}
+.qm-Slider-input:focus::-moz-range-thumb {
+    box-shadow: $slider-track-thumb-focus-shadow;
+}
+
+.qm-Slider-input::-moz-focus-inner,.qm-Slider-input::-moz-focus-outer {
+    border: 0;
+}
+/*h ide the outline behind the border*/
+.qm-Slider-input:-moz-focusring {
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+}
+/* ------------- MS support ------------ */
+.qm-Slider--ms .qm-Slider-input {
+    background: none;
+    height: 40px;
+}
+.qm-Slider-input::-ms-track {
+    @extend %slider-track;
+    height: 2px;
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    /*remove default tick marks*/
+    color: transparent;
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 24px 0; /*TODO*/
+}
+input[type="range"]::-ms-fill-lower {
+    background: $slider-track-progress-color;
+}
+input[type="range"]::-ms-fill-upper {
+    background: $slider-track-color;
+}
+
+.qm-Slider-input::-ms-thumb {
+    @extend %slider-thumb;
+}
+.qm-Slider-input:active::-ms-thumb {
+    background-color: $slider-track-progress-color;
+}
+.qm-Slider-input:active::-ms-sthumb {
+    box-shadow: $slider-track-thumb-active-shadow;
+}
+
+/* tooltip support */
+
+.qm-Slider-tooltip {
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+    position: absolute;
+    top: 0; left: 0;
+    height:24px;
+    line-height: 24px;
+    font-size: .7rem;
+    text-align:center;
+    padding: 0 10px;
+    color: $slider-tooltip-color;
+    background-color: $slider-tooltip-bgcolor;
+    border-radius: 2px;
+    z-index: 10000;
+}
+.qm-Slider-tooltip::after {
+    user-select: none;
+    content: "";
+    display:block;
+    position:relative;
+    margin-left:auto;
+    margin-right: auto;
+    width:4px;
+    height:4px;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(0,0,0,0.4);
+}

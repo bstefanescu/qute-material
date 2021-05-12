@@ -1,0 +1,8 @@
+<q:template export>
+<div class='qm-Input-row'>
+    <div q:class={ _computeClass() }>
+        <textarea class='qm-Textbox-input' q:ref='_input'></textarea>
+        <label class='qm-Textbox-label'>{{label}}</label>
+    </div>
+</div>
+</q:template>

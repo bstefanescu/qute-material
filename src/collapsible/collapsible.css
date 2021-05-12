@@ -1,0 +1,83 @@
+
+
+.qm-Collapsible {
+    box-sizing: border-box;
+}
+
+.qm-Collapsible-toggle {
+    box-sizing: border-box;
+    width:0;
+    height:0;
+    margin:0;
+    padding:0;
+}
+
+.qm-Collapsible-title {
+    box-sizing: border-box;
+    flex:1;
+    display:inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.qm-Collapsible--chevron .qm-Collapsible-title:before {
+    display:inline-block;
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-right: 8px;
+    transition: .3s transform;
+    transition-timing-function: ease-in-out;
+}
+.qm-Collapsible-toggle:checked ~ .qm-Collapsible-title:before {
+    transform: rotate(135deg);
+}
+
+.qm-Collapsible--chevron-right .qm-Collapsible-title {
+    justify-content: space-between;
+}
+
+.qm-Collapsible--chevron-right .qm-Collapsible-title:after {
+    justify-self: end;
+    display:inline-block;
+    content: "";
+    height: 8px;
+    width: 8px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin-right: 8px;
+    transition: .3s transform;
+    transition-timing-function: ease-in-out;
+}
+.qm-Collapsible-toggle:checked ~ .qm-Collapsible-title:after {
+    transform: scaleY(-1) rotate(45deg);
+}
+
+.qm-Collapsible-toggle:focus ~ .qm-Collapsible-title {
+    color: blue;
+}
+
+.qm-Collapsible-header {
+    box-sizing: border-box;
+    position: relative;
+    height: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.qm-Collapsible-body {
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 0;
+    margin: 0;
+    border: none;
+    padding: 0;
+
+    transition: .3s height;
+    transition-timing-function: ease-in-out;
+}
+

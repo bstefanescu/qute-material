@@ -1,0 +1,19 @@
+import { qPopup } from '@qutejs/popup';
+import { mTextbox } from '../textbox';
+import { mToggle } from '../toggle';
+import { mDatePicker } from '../date-picker';
+import { mBox } from '../box';
+import '../icons/dropdown'; // force loading dropdown icon
+
+<q:template export>
+    <div q:attrs='class'>
+        <m:textbox left-icon={icon} label={label} value={_valueText} @change='textboxChanged' q:ref='_textbox' q:attrs='!class'>
+            <nested name='right'><m:toggle class='qm-Select-toggle' icon='qm:dropdown' @click='toggleDropdown' /></nested>
+        </m:textbox>
+        <q:popup class='qm-DatePicker-popup' position='bottom end' q:ref='_popup' @close='_onPopupClose' @open='_onPopupOpen'>
+            <m:box class='qm-Box--outline qm-Box--nopadding'>
+                <m:date-picker value={picker} @change='_dateSelected'/>
+            </m:box>
+        </q:popup>
+    </div>
+</q:template>

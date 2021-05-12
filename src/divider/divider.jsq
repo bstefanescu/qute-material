@@ -1,0 +1,4 @@
+import './divider.css';
+<q:template export>
+<i class='qm-Divider' q:attrs='class,style'/>
+</q:template>

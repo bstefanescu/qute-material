@@ -1,0 +1,8 @@
+<q:template export>
+  <div class={_computeClass()} q:style={{width:width}}>
+    <input class={$attrs.class ? "qm-Slider-input "+$attrs.class:"qm-Slider-input"}
+        type='range'
+        q:ref='_input'
+        q:attrs='!class'>
+  </div>
+</q:template>

@@ -1,0 +1,10 @@
+
+function computeClass(attrs) {
+    return [
+        "qm-TimesIcon",
+        attrs.size && "qm-TimesIcon--"+attrs.size
+    ];
+}
+<q:template export import='computeClass'>
+<i q:class={computeClass($attrs)} q:attrs='class,style' />
+</q:template>

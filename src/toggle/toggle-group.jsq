@@ -1,0 +1,3 @@
+<q:template export>
+    <div class='qm-Toggle-group'><slot/></div>
+</q:template>

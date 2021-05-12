@@ -1,0 +1,13 @@
+
+
+function computeClass(attrs) {
+    const type = attrs.name || 'cross';
+    return [
+        "qm-DropdownIcon",
+        "qm-DropdownIcon--"+type,
+        attrs.size && "qm-DropdownIcon--"+attrs.size
+    ];
+}
+<q:template export import='computeClass'>
+<i q:class={computeClass($attrs)} q:attrs='class,style'/>
+</q:template>
