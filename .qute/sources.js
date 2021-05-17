@@ -9,7 +9,7 @@ export default function sourceModules() {
             fs.accessSync(index, fs.constants.F_OK);
             r.push(index);
         } catch(e) {
-            console.log('@@@', index);
+            //console.log('@@@', index);
         } // ignore
         return r;
     }, []);

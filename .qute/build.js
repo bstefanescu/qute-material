@@ -52,7 +52,7 @@ function makeWebFileName(baseName, minimize) {
     if (!baseName) {
         let name = pkg.name;
         if (name.startsWith('@')) name = name.substring(1);
-        baseName = name.replace(/_\//g, '-')+'-'+pkg.version;
+        baseName = name.replace(/[_\/]/g, '-')+'-'+pkg.version;
     }
     return baseName+(minimize?'.min.js':'.js');
 }
@@ -89,8 +89,8 @@ export default class BuildConfig {
         return {
             input: './src/index.js',
             output: {
-                name: makeWebComponentName(this.componentName),
-                file: path.join('dist', makeWebFileName(this.moduleName, minimize)),
+                name: makeWebComponentName(this.opts.componentName),
+                file: path.join('dist', makeWebFileName(this.opts.moduleName, minimize)),
                 format: 'iife',
                 sourcemap: true,
                 plugins: [
